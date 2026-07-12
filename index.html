@@ -1,0 +1,475 @@
+<meta charset="UTF-8">
+<title>Vedaj Padman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<meta name="description" content="Vedaj Padman — Computer Science researcher.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root {
+  --bg:         #FFFFFF;
+  --text:       #111111;
+  --text-soft:  #444444;
+  --text-faint: #888888;
+  --rule:       #CCCCCC;
+  --rule-bold:  #111111;
+  --paper-ph:   #F2F2F2;
+  --red:        #D0021B;
+  --font-display: 'Libre Caslon Display', 'Palatino Linotype', Georgia, serif;
+  --font: 'Libre Caslon Text', 'Palatino Linotype', Georgia, serif;
+  --font-ui: 'Libre Caslon Text', Georgia, serif;
+  --font-serif: Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.75; }
+
+/* ── Outer wrapper ── */
+.wrap {
+  max-width: 780px;
+  margin-inline: auto;
+  padding: 0 2rem;
+}
+
+/* ── Masthead ── */
+.masthead {
+  padding-top: 3.5rem;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.masthead-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 1.1rem;
+  font-family: var(--font-serif);
+}
+
+.masthead-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+
+.masthead-rule-top {
+  width: 100%;
+  border: none;
+  border-top: 2px solid var(--rule-bold);
+  margin-bottom: 0.3rem;
+}
+.masthead-rule-bot {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--rule-bold);
+  margin-bottom: 0;
+}
+
+.masthead-descriptor {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  padding: 0.55rem 0;
+  font-family: var(--font-serif);
+}
+
+/* ── Bio ── */
+.bio {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.bio-photo {
+  width: 200px;
+  aspect-ratio: 3/4;
+  background: var(--paper-ph);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+
+.bio-photo-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #BBBBBB;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-serif);
+}
+
+.bio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bio-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text);
+  text-align: justify;
+  hyphens: auto;
+}
+
+.bio-text p::first-letter {
+  float: left;
+  font-size: 4.2em;
+  line-height: 0.72;
+  margin: 0.06em 0.07em 0 0;
+  font-style: italic;
+  color: var(--text);
+}
+
+
+@media (max-width: 600px) {
+  .bio {
+    grid-template-columns: 1fr;
+  }
+  .bio-photo {
+    width: 140px;
+    aspect-ratio: 3/4;
+  }
+}
+
+/* ── Interests ── */
+.interests {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.interests-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+}
+
+.interests-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.interests-row span {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.interests-row span::after {
+  content: ' · ';
+  color: var(--red);
+  font-style: normal;
+}
+
+.interests-row span:last-child::after {
+  content: '';
+}
+
+/* ── Photos ── */
+.photos {
+  padding: 2.5rem 0 3rem;
+}
+
+.photos-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.1rem;
+  font-family: var(--font-serif);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(12%);
+  transition: filter 0.2s;
+}
+
+.photo-grid img:hover {
+  filter: grayscale(0%);
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-name {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-decoration: none;
+  font-family: var(--font-serif);
+  transition: color 0.12s;
+}
+.footer-links a:hover { color: var(--text); }
+.footer-links a:focus-visible { outline: 1px solid var(--text); outline-offset: 3px; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  .wrap { padding: 0 1.25rem; }
+  .masthead { padding-top: 2.25rem; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.open { display: flex; }
+
+.lightbox-img {
+  max-width: 88vw;
+  max-height: 88vh;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+}
+.lightbox-btn:hover { border-color: rgba(255,255,255,0.7); }
+.lightbox-prev { left: 1.25rem; }
+.lightbox-next { right: 1.25rem; }
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+}
+.lightbox-close:hover { border-color: rgba(255,255,255,0.7); }
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.45);
+}
+
+.photo-grid img { cursor: pointer; }
+</style>
+
+<div class="wrap">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <p class="masthead-eyebrow">Computer Science · Ethics · Technology &amp; Society</p>
+    <h1 class="masthead-name">Vedaj Padman</h1>
+    <hr class="masthead-rule-top">
+    <div class="masthead-descriptor">Northeastern University, Boston</div>
+    <hr class="masthead-rule-bot">
+  </header>
+
+  <!-- Bio -->
+  <section class="bio" aria-label="About">
+    <div class="bio-photo">
+      <img src="photo.jpg" alt="Vedaj Padman">
+    </div>
+    <div class="bio-text">
+      <p>I study computing systems and the social conditions that shape them. I hold an MS in Computer Science from Northeastern University, Boston, and have worked as a software engineer across India and the United States before returning to research and teaching. My questions tend to be about power: who builds these systems, whose values they encode, and what happens to those who have no say in either. This has led me to work on algorithm auditing, machine ethics, human factors engineering, the spread of misinformation, forensic linguistics, epistemic injustice, and data colonialism. I am also invested in privacy and security, particularly as both become increasingly a luxury rather than a given. I teach as well, and find that it clarifies thinking in ways that research alone does not. Outside of work, I am a trained Indian classical vocalist. I study global languages, read widely, and follow urban planning and transit policy with more attention than most people would consider reasonable. I work with organizations focused on education access for communities that do not often get it, and I think art is worth spending time on. I also cook, with a particular interest in recreating South Indian recipes that have largely fallen out of circulation, the kind that exist only in someone's memory, if at all.</p>
+    </div>
+  </section>
+
+  <!-- Research interests inline -->
+  <section class="interests" aria-label="Research interests">
+    <p class="interests-label">Research Interests</p>
+    <div class="interests-row">
+      <span>Algorithm Auditing</span>
+      <span>Machine Ethics</span>
+      <span>Human Factors Engineering</span>
+      <span>Privacy &amp; Security</span>
+      <span>Misinformation</span>
+      <span>Forensic Linguistics</span>
+      <span>Epistemic Injustice</span>
+      <span>Data Colonialism</span>
+    </div>
+  </section>
+
+  <!-- Photographs -->
+  <section class="photos" aria-label="Photographs">
+    <p class="photos-label">Photographs</p>
+    <div class="photo-grid">
+      <img src="images/20200726_201645.jpg" alt="">
+      <img src="images/20200913_181908.jpg" alt="">
+      <img src="images/20201010_161536.jpg" alt="">
+      <img src="images/20201015_174314.jpg" alt="">
+      <img src="images/20201110_104520.jpg" alt="">
+      <img src="images/20201110_105319.jpg" alt="">
+      <img src="images/20210411_155657.jpg" alt="">
+      <img src="images/20210411_165406.jpg" alt="">
+      <img src="images/20210720_180751.jpg" alt="">
+      <img src="images/20211106_181658.jpg" alt="">
+      <img src="images/20220226_175457.jpg" alt="">
+      <img src="images/20220502_202424.jpg" alt="">
+      <img src="images/20220509_185219.jpg" alt="">
+      <img src="images/20220728_203551.jpg" alt="">
+      <img src="images/20221113_161618.jpg" alt="">
+      <img src="images/20221126_132404.jpg" alt="">
+      <img src="images/20221126_133329.jpg" alt="">
+      <img src="images/20221217_164305~2.jpg" alt="">
+      <img src="images/20230325_100831.jpg" alt="">
+      <img src="images/20230325_101014.jpg" alt="">
+      <img src="images/20230325_122443.jpg" alt="">
+      <img src="images/20230326_141059.jpg" alt="">
+      <img src="images/20230326_142933.jpg" alt="">
+      <img src="images/20230326_191816.jpg" alt="">
+      <img src="images/20230423_142425.jpg" alt="">
+      <img src="images/20230527_202252.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-name">Vedaj Padman</span>
+    <nav class="footer-links" aria-label="Links">
+      <a href="https://github.com/vedaj">GitHub</a>
+      <a href="https://www.linkedin.com/in/vedaj/">LinkedIn</a>
+    </nav>
+  </footer>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lightbox-btn lightbox-prev" id="lbPrev" aria-label="Previous">&#8592;</button>
+  <img class="lightbox-img" id="lbImg" src="" alt="">
+  <button class="lightbox-btn lightbox-next" id="lbNext" aria-label="Next">&#8594;</button>
+  <span class="lightbox-counter" id="lbCounter"></span>
+</div>
+
+<script>
+(function () {
+  const imgs    = Array.from(document.querySelectorAll('.photo-grid img'));
+  const lb      = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lbImg');
+  const lbCtr   = document.getElementById('lbCounter');
+  const lbClose = document.getElementById('lbClose');
+  let current = 0;
+
+  function show(index) {
+    current = (index + imgs.length) % imgs.length;
+    lbImg.src = imgs[current].src;
+    lbCtr.textContent = (current + 1) + ' / ' + imgs.length;
+  }
+
+  function open(index) {
+    show(index);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  imgs.forEach((img, i) => img.addEventListener('click', () => open(i)));
+
+  document.getElementById('lbPrev').addEventListener('click', () => show(current - 1));
+  document.getElementById('lbNext').addEventListener('click', () => show(current + 1));
+  lbClose.addEventListener('click', close);
+
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft')  show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+    if (e.key === 'Escape')     close();
+  });
+})();
+</script>
