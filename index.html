@@ -135,19 +135,10 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); line
   font-size: 4.2em;
   line-height: 0.72;
   margin: 0.06em 0.07em 0 0;
-  font-style: italic;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
   color: var(--text);
-}
-
-
-@media (max-width: 600px) {
-  .bio {
-    grid-template-columns: 1fr;
-  }
-  .bio-photo {
-    width: 140px;
-    aspect-ratio: 3/4;
-  }
 }
 
 /* ── Interests ── */
@@ -256,11 +247,27 @@ footer {
 .footer-links a:focus-visible { outline: 1px solid var(--text); outline-offset: 3px; }
 
 /* ── Responsive ── */
+@media (max-width: 720px) {
+  .bio {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: left;
+  }
+  .bio-photo {
+    width: 60%;
+    max-width: 260px;
+    aspect-ratio: 3/4;
+  }
+}
+
 @media (max-width: 600px) {
-  html { font-size: 16px; }
-  .wrap { padding: 0 1.25rem; }
-  .masthead { padding-top: 2.25rem; }
+  html { font-size: 15px; }
+  .wrap { padding: 0 1.1rem; }
+  .masthead { padding-top: 2rem; }
+  .masthead-eyebrow { font-size: 0.62rem; letter-spacing: 0.14em; }
+  .interests-row { gap: 0.1rem 0; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .lightbox-btn { display: none; }
   footer { flex-direction: column; align-items: flex-start; }
 }
 
@@ -379,7 +386,7 @@ footer {
 
   <!-- Photographs -->
   <section class="photos" aria-label="Photographs">
-    <p class="photos-label">Photographs</p>
+    <p class="photos-label">Through My Lens</p>
     <div class="photo-grid">
       <img src="images/20200726_201645.jpg" alt="">
       <img src="images/20200913_181908.jpg" alt="">
